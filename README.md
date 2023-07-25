@@ -30,7 +30,14 @@ User-friendly interface.
 # Technologies -
 
 MongoDB: A NoSQL database for storing user information and chat data.
+
 Express: A backend framework for building APIs and handling HTTP requests.
+
 React: A JavaScript library for building the user interface.
+
 Node.js: A server-side JavaScript runtime environment.
+
 Socket.IO: A library that enables real-time, bidirectional communication between the client and the server.
+
+# Copyright ©️ 2023 
+# vigkrishna 
