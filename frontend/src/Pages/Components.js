@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
@@ -16,7 +16,7 @@ export const Container1 = styled.div`
 display: flex;
 flex-direction: row;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 50px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
@@ -29,11 +29,11 @@ flex-direction: row;
 
 export const Text = styled.div`
  
-font-size: 2.5rem;
+font-size: 3.5rem;
 color: #ff4b2b;
 align-text: center;
 font-weight: 800;
-margin: 12vw 30vh
+margin: 12vw 32vh
 
 
 `;
