@@ -4,6 +4,9 @@ const dotenv = require("dotenv")
 const {chats} = require("./data")
 dotenv.config();
 const PORT = process.env.PORT || 7000;
+const cors = require('cors');
+
+app.use(cors());
 
 app.get("/", (req,res)=>{
     res.send("api is running")

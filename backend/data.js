@@ -15,7 +15,7 @@ users: [
     
 
     ],
-    _id: "100020003",
+    _id: "1",
     chatName: "friends",
 
 },
@@ -37,7 +37,7 @@ users: [
         
     
         ],
-        _id: "1000200030004",
+        _id: "2",
         chatName: "friends_circle",
     
 }
