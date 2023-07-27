@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import * as Components from "./Components";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './styles.css';
+import { useToast } from '@chakra-ui/react'
 
 
 
@@ -17,6 +18,58 @@ const HomePage = () => {
       const [password, setPassword] = useState();
       const [useremail, setUseremail] = useState();
       const [upassword, setUPassword] = useState();
+      const [pic,setPic] = useState();
+      const [loading, setLoading]= useState(false);
+      const toast = useToast();
+      const postDetails=(pics)=>{
+        setLoading(true);
+        if(pics === undefined){
+          toast({
+            title: 'Please upload your image',
+        
+            status: 'warning',
+            duration: 5000,
+            isClosable: true,
+            position: "top",
+          });
+          return;
+        }
+
+        if(pics.type ==="image/jpeg" || pics.type ==="image/png"){
+          const data = new FormData();
+          data.append("file", pics);
+          data.append("upload_present", "InTouch");
+          data.append("cloud_name","disstxt8t");
+          fetch("https://api.cloudinary.com/v1_1/disstxt8t/image/upload",{
+            method : "post",
+            body: data,}).then((res)=> res.json())
+            .then(data =>{
+              setPic(data.url.toString());
+              
+              setLoading(false);
+            })
+            .catch((err)=>{
+              console.log(err);
+              setLoading(false);
+            })
+
+          }else{
+            toast({
+              title: 'Please upload your image',
+          
+              status: 'warning',
+              duration: 5000,
+              isClosable: true,
+              position: "top",
+            });
+            setLoading(false);
+            return;
+          }
+        }
+      
+
+
+
       const submitHandler=()=>{
 
       }
@@ -24,17 +77,17 @@ const HomePage = () => {
       return (<>
       <Components.Container1>
        <Components.Text>InTouch</Components.Text>
-       {/* <Components.Box>Real-Time Chatting Website</Components.Box> */}
+      
       </Components.Container1>
 
 
 
         <Components.Container>
 
-        <Switch>
+        {/* <Switch>
           <Route path="/register" component={HomePage} />
           <Route path="/signin" component={HomePage} />
-        </Switch>
+        </Switch> */}
 
 
 
@@ -71,12 +124,22 @@ const HomePage = () => {
                 
                 
                 />
-               <Link to ='/register'>
+                <Components.Input
+               type="file"
+                placeholder="Upload your pic"
+                value={pic}
+                onChange={(e)=>setPic(e.target.value)}
+                
+                
+                />
+
+{/* 
+               <Link to ='/register'> */}
               <Components.Button
               onClick={submitHandler}
-              
+              isLoading={loading}
               >Sign Up</Components.Button>
-              </Link>
+              {/* </Link> */}
             </Components.Form>
           </Components.SignUpContainer>
 
@@ -100,12 +163,12 @@ const HomePage = () => {
                 onChange={(e)=>setUPassword(e.target.value)}
                 />
               <Components.Anchor href="#">Forgot your password?</Components.Anchor>
-              <Link to="/signin">
+              {/* <Link to="/signin"> */}
               <Components.Button
               onClick={submitHandler}
               
               >Sign In</Components.Button>
-              </Link>
+              {/* </Link> */}
             </Components.Form>
           </Components.SignInContainer>
           <Components.OverlayContainer signingIn={signIn}>
@@ -133,8 +196,8 @@ const HomePage = () => {
         </Components.Container>
         </>
       );
-    }
-
+    
+      }
     const signIn = ()=>{
 
     }

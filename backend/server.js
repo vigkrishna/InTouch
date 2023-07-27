@@ -3,7 +3,7 @@ const app = express();
 const dotenv = require("dotenv")
 const {chats} = require("./data")
 const userRoutes = require("./routes/userRoutes")
-
+const {notFound,errorHandler} = require("./middleware/errorMiddleware")
 dotenv.config();
 const connectDB = require("./config/db")
 const PORT = process.env.PORT || 7000;
@@ -28,7 +28,8 @@ app.get("/api/chats/:id", (req,res)=>{
     const idno =  chats.find((c)=>c._id === req.params.id);
     res.send(idno)
 })
-
+app.use(notFound);
+app.use(errorHandler);
 
 
 app.listen(PORT, (res,req)=>{

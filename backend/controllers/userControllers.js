@@ -47,7 +47,9 @@ const authUser = expressAsyncHandler(async(req,res)=>{
     const {email, password} = req.body;
 
     const user = await User.findOne({email});
-    if(user && (await User.matchPassword(password))){
+
+    if(user && (await user.matchPassword(password)))
+    {
         res.json({
             _id: user._id,
             name: user.name,
@@ -56,14 +58,15 @@ const authUser = expressAsyncHandler(async(req,res)=>{
             token: generateToken(user._id),
         }
     );
+    }
     else{
         res.status(401);
-        throw new console.Error("invalid email or password");
+        throw new Error("invalid email or password");
     }
-)
-    
+
+})
 
 
 
 
-module.exports= {registerUser}
+module.exports= {registerUser, authUser}
