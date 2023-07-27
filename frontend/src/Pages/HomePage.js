@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import * as Components from "./Components";
-import './styles.css'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './styles.css';
+
+
+
+
+
 
 
 const HomePage = () => {
@@ -9,7 +15,8 @@ const HomePage = () => {
       const [name, setName] = useState();
       const [email, setEmail] = useState();
       const [password, setPassword] = useState();
-      
+      const [useremail, setUseremail] = useState();
+      const [upassword, setUPassword] = useState();
       const submitHandler=()=>{
 
       }
@@ -23,13 +30,23 @@ const HomePage = () => {
 
 
         <Components.Container>
+
+        <Switch>
+          <Route path="/register" component={HomePage} />
+          <Route path="/signin" component={HomePage} />
+        </Switch>
+
+
+
           <Components.SignUpContainer signingIn={signIn}>
             <Components.Form>
+        
               <Components.Title>Create Account</Components.Title>
 
               <Components.Input 
               type="text" 
               placeholder="Name" 
+              value={name}
               onChange={(e)=>setName(e.target.value)}
               on
               
@@ -40,6 +57,7 @@ const HomePage = () => {
               <Components.Input
                type="email" 
                placeholder="Email"
+               value={email}
                onChange={(e)=>setEmail(e.target.value)}
 
                />
@@ -48,36 +66,46 @@ const HomePage = () => {
               <Components.Input
                type="password"
                 placeholder="Password"
+                value={password}
                 onChange={(e)=>setPassword(e.target.value)}
                 
                 
                 />
-
+               <Link to ='/register'>
               <Components.Button
               onClick={submitHandler}
               
               >Sign Up</Components.Button>
+              </Link>
             </Components.Form>
           </Components.SignUpContainer>
+
+
+         
           <Components.SignInContainer signingIn={signIn}>
             <Components.Form>
+            
               <Components.Title>Sign in</Components.Title>
               <Components.Input
                type="email"
                 placeholder="Email" 
-                onChange={(e)=>setEmail(e.target.value)}
+                value={useremail}
+                onChange={(e)=>setUseremail(e.target.value)}
                 
                 />
               <Components.Input
                type="password"
                 placeholder="Password"
-                onChange={(e)=>setPassword(e.target.value)}
+                value={upassword}
+                onChange={(e)=>setUPassword(e.target.value)}
                 />
               <Components.Anchor href="#">Forgot your password?</Components.Anchor>
+              <Link to="/signin">
               <Components.Button
               onClick={submitHandler}
               
               >Sign In</Components.Button>
+              </Link>
             </Components.Form>
           </Components.SignInContainer>
           <Components.OverlayContainer signingIn={signIn}>
@@ -105,6 +133,14 @@ const HomePage = () => {
         </Components.Container>
         </>
       );
+    }
+
+    const signIn = ()=>{
+
+    }
+
+    const Register =()=>{
+
     }
     
   
