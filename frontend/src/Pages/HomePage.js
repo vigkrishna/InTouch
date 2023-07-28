@@ -1,5 +1,6 @@
 import {
   Box,
+  Center,
   Container,
   Tab,
   TabList,
@@ -25,6 +26,7 @@ function Homepage() {
   return (
     <Container maxW="xl" centerContent>
       <Box
+       className="box1"
         d="flex"
         justifyContent="center"
         p={3}
@@ -34,15 +36,15 @@ function Homepage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
+        <Text fontSize="4xl" fontFamily="Roboto" align="center" color="black" >
           InTouch
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box className="box2" bg="white" w="100%" p={4} borderRadius="2lg" borderWidth="2px" border >
         <Tabs isFitted variant="soft-rounded">
-          <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+          <TabList mb="1em" >
+            <Tab fontFamily="Roboto">Login</Tab>
+            <Tab fontFamily="Roboto">Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

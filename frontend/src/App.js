@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-     <Route path ='/'  component={HomePage} exact />
-     <Route path ='/chat'  component={ChatPage} />
+     <Route path ='/'  component={HomePage}  />
+     {/* <Route path ='/chat'  component={ChatPage} /> */}
     </div>
   );
 }
