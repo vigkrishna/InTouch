@@ -9,6 +9,9 @@ function chat() {
     <h2>
         i will be working on it after few days
     </h2>
+    <h3>
+        my ui consists of a sidebar and main chatting side
+    </h3>
     </>
   )
 }

@@ -41,7 +41,7 @@ import { useHistory } from "react-router-dom";
       };
 
       const { data } = await axios.post(
-        "https://intouchbackendkv.onrender.com/api/login",
+        "https://intouchbackendkv.onrender.com/api/user/login",
         { email, password },
         config
       );

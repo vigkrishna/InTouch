@@ -51,7 +51,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "https://intouchbackendkv.onrender.com/api/register",
+        "https://intouchbackendkv.onrender.com/api/user/register",
         {
           name,
           email,
