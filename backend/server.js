@@ -17,7 +17,7 @@ app.get("/", (req,res)=>{
     res.send("api is running")
 })
 
-app.use('https://intouchbackendkv.onrender.com/', userRoutes)
+app.use('https://intouchbackendkv.onrender.com', userRoutes)
 
 app.get("/api/chats", (req,res)=>{
     res.send(chats);
