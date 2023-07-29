@@ -4,7 +4,8 @@
   "description": "MERN Stack Chat App.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/server.js"
+    "start": "nodemon backend/server.js",
+    "build":"npm i"
   },
   "author": "Krishna Vig",
   "license": "ISC",
