@@ -1,13 +1,15 @@
 import {
   Box,
-  Center,
+ 
   Container,
+  
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
   Text,
+  
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useHistory } from "react-router";
@@ -25,22 +27,26 @@ function Homepage() {
 
   return (
     <Container maxW="xl" centerContent>
+   
+
+        {/* <VStack spacing="20px"> */}
       <Box
        className="box1"
-        d="flex"
+         d="flex"
         justifyContent="center"
         p={3}
         bg="white"
         w="100%"
         m="40px 0 15px 0"
-        borderRadius="lg"
-        borderWidth="1px"
+        borderRadius="15px"
+        borderWidth="3px"
       >
-        <Text fontSize="4xl" fontFamily="Roboto" align="center" color="black" >
+        <Text fontSize="4xl" fontFamily="Roboto" align="center" color="black" textDecor="bold" >
           InTouch
         </Text>
       </Box>
-      <Box className="box2" bg="white" w="100%" p={4} borderRadius="2lg" borderWidth="2px" border >
+      
+      <Box className="box2" bg="white" w="100%" p={4} borderRadius="40px" borderWidth="3px" border >
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em" >
             <Tab fontFamily="Roboto">Login</Tab>
@@ -56,6 +62,10 @@ function Homepage() {
           </TabPanels>
         </Tabs>
       </Box>
+
+
+      {/* </VStack> */}
+     
     </Container>
   );
 }

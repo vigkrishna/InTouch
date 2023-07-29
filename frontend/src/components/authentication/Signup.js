@@ -24,10 +24,10 @@ const Signup = () => {
     setPicLoading(true);
     if (!name || !email || !password || !confirmpassword) {
       toast({
-        title: "Please Fill all the Feilds",
+        title: "Please Fill all the Fields",
         status: "warning",
-        duration: 5000,
-        isClosable: true,
+        duration: 1000,
+        isClosable: false,
         position: "top",
       });
       setPicLoading(false);
@@ -64,8 +64,8 @@ const Signup = () => {
       toast({
         title: "Registration Successful",
         status: "success",
-        duration: 5000,
-        isClosable: true,
+        duration: 3000,
+        isClosable: false,
         position: "top",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
@@ -76,8 +76,8 @@ const Signup = () => {
         title: "Error Occured!",
         description: error.response.data.message,
         status: "error",
-        duration: 5000,
-        isClosable: true,
+        duration: 3000,
+        isClosable: false,
         position: "top",
       });
       setPicLoading(false);

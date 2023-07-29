@@ -6,7 +6,7 @@ html{
 }
 
 .App{
-   background-image: url("https://wallpapercave.com/wp/wp6559609.jpg");
+   background-image: url("https://res.cloudinary.com/vigkrishna/image/upload/v1690605474/hpuwfpduzubv3umgrzct.webp");
    object-fit: cover;
    background-repeat: no-repeat;
    background-size: cover;
@@ -15,4 +15,5 @@ html{
     min-height : 100vh;
     display: flex;
     max-width: 100%;
+   
 }
