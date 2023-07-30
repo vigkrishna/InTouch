@@ -70,7 +70,7 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
-      history.push("/chats");
+      history.push("/");
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -144,6 +144,7 @@ const Signup = () => {
         <Input
           type="email"
           placeholder="Enter Your Email Address"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
@@ -153,6 +154,7 @@ const Signup = () => {
           <Input
             type={show ? "text" : "password"}
             placeholder="Enter Password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
@@ -168,6 +170,7 @@ const Signup = () => {
           <Input
             type={show ? "text" : "password"}
             placeholder="Confirm password"
+            value={confirmpassword}
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
@@ -183,6 +186,7 @@ const Signup = () => {
           type="file"
           p={1.5}
           accept="image/*"
+          value={pic}
           onChange={(e) => postDetails(e.target.files[0])}
         />
       </FormControl>
