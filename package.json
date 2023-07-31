@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon backend/server.js",
-    "build":"npm i"
+    "build": "npm i"
   },
   "author": "Krishna Vig",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "socket.io": "^4.7.1"
   }
 }
