@@ -89,4 +89,30 @@ res.send(users);
 })
 
 
-module.exports= {registerUser, authUser, allUsers}
+const chatpersons =expressAsyncHandler(async(req,res)=>{
+
+    const searchUsers = req.query.UserG ?{
+        $or: [
+            {
+                name: {$regex: req.query.UserG, $option: "i"}
+            },
+            {
+                email: {$regex: req.query.UserG, $option: "i"}
+            },
+        ],
+    }
+    : {};
+    
+    const users1 = await User.find(searchUsers);
+    
+    res.send(users1);
+    
+
+
+
+
+
+
+})
+
+module.exports= {registerUser, authUser, allUsers,chatpersons}

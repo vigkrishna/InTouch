@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
     password: {type:String, required: true},
     pic: {type:String, 
         default: "https://tse4.mm.bing.net/th?id=OIP.Xi5HZyCo4UpdOUF-pWEbGQHaHa&pid=Api&P=0&h=180" }
+        
 },
 {
     timestamps: true,
