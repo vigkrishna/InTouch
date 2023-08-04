@@ -108,11 +108,12 @@ const chatpersons =expressAsyncHandler(async(req,res)=>{
     res.send(users1);
     
 
+})
 
 
-
-
+const welcomePage=((req,res)=>{
+res.send("welcome to InTouch !!")
 
 })
 
-module.exports= {registerUser, authUser, allUsers,chatpersons}
+module.exports= {registerUser, authUser, allUsers,chatpersons,welcomePage}

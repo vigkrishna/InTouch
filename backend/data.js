@@ -83,6 +83,27 @@ users: [
         _id: "2",
         chatName: "friends_circle",
     
+},
+{
+
+    isGroupChat: true,
+
+    users: [
+        {
+         name : "us1",
+         email : "us1@gmail.com",
+        },
+    
+        {
+            name: "us2",
+            email: "us2@gmail.com",
+        }
+        
+    
+        ],
+        _id: "7",
+        chatName: "friends_circle_official",
+    
 }
 
 ]

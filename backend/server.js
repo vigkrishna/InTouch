@@ -23,6 +23,10 @@ app.get("/api/chats", (req,res)=>{
     res.send(chats);
 })
 
+app.get("/api/user/login/welcomepage", (req,res)=>{
+    res.send("welcome to InTouch")
+})
+
 app.get("/api/chats/:id", (req,res)=>{
     // console.log(req.params.id)
     const idno =  chats.find((c)=>c._id === req.params.id);
