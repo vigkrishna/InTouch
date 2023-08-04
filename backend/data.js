@@ -105,6 +105,29 @@ users: [
         chatName: "friends_circle_official",
     
 }
+,
+
+{
+
+    isGroupChat: false,
+
+    users: [
+        {
+         name : "usg2",
+         email : "usg2@gmail.com",
+        },
+    
+        {
+            name: "usg2",
+            email: "usg2@gmail.com",
+        }
+        
+    
+        ],
+        _id: "8",
+        chatName: "usersgrp",
+    
+}
 
 ]
 
