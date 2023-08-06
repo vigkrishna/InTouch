@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require("dotenv")
 const {chats} = require("./data")
 const userRoutes = require("./routes/userRoutes")
+const chatRoutes = require("./routes/chatRoutes")
 const {notFound,errorHandler} = require("./middleware/errorMiddleware")
 dotenv.config();
 const connectDB = require("./config/db")
@@ -18,14 +19,9 @@ app.get("/", (req,res)=>{
 })
 
 app.use('/api/user', userRoutes)
+app.use('/api/chat', chatRoutes)
 
-app.get("/api/chats", (req,res)=>{
-    res.send(chats);
-})
 
-app.get("/api/user/login/welcomepage", (req,res)=>{
-    res.send("welcome to InTouch")
-})
 
 app.get("/api/chats/:id", (req,res)=>{
     // console.log(req.params.id)

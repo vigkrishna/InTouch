@@ -80,7 +80,7 @@ const keyword = req.query.search ?{
 }
 : {};
 
-const users = await User.find(keyword);
+const users = await User.find(keyword).find({_id:{$ne: req.user._id}});
 
 res.send(users);
 
@@ -89,31 +89,5 @@ res.send(users);
 })
 
 
-const chatpersons =expressAsyncHandler(async(req,res)=>{
 
-    const searchUsers = req.query.UserG ?{
-        $or: [
-            {
-                name: {$regex: req.query.UserG, $option: "i"}
-            },
-            {
-                email: {$regex: req.query.UserG, $option: "i"}
-            },
-        ],
-    }
-    : {};
-    
-    const users1 = await User.find(searchUsers);
-    
-    res.send(users1);
-    
-
-})
-
-
-const welcomePage=((req,res)=>{
-res.send("welcome to InTouch !!")
-
-})
-
-module.exports= {registerUser, authUser, allUsers,chatpersons,welcomePage}
+module.exports= {registerUser, authUser, allUsers}
