@@ -18,3 +18,5 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     const [istyping, setIsTyping] = useState(false);
     const toast = useToast();
 }  
+
+export default SingleChat;

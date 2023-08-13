@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Stack, Text } from "@chakra-ui/layout";
+
 function MyChats() {
   return (
     <div>
@@ -23,6 +24,7 @@ function MyChats() {
         justifyContent="space-between"
         alignItems="center"
       ></Box>
+      </Box>
     </div>
   )
 }
