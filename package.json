@@ -10,6 +10,7 @@
   "author": "Krishna Vig",
   "license": "ISC",
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -20,6 +21,7 @@
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.1",
     "nodemon": "^3.0.1",
+    "react-router-dom": "^6.15.0",
     "socket.io": "^4.7.1"
   }
 }

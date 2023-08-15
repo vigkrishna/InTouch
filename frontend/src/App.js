@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
  import ChatPage from './Pages/ChatPage';
 import './App.css';
@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-     <Route path ="/"  component={HomePage} exact />
-      <Route path ="/chat"  component={ChatPage} /> 
+     <Route path ="/"  component={HomePage} exact/>
+      <Route path ="/chats"  component={ChatPage} /> 
     </div>
   );
 }

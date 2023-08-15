@@ -5,13 +5,13 @@ import { VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
-
+import { useHistory } from "react-router";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
- 
+  const history = useHistory();
 
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -24,11 +24,11 @@ const Signup = () => {
     setPicLoading(true);
     if (!name || !email || !password || !confirmpassword) {
       toast({
-        title: "Please Fill all the Fields",
+        title: "Please Fill all the Feilds",
         status: "warning",
-        duration: 1000,
-        isClosable: false,
-        position: "top",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
       });
       setPicLoading(false);
       return;
@@ -39,7 +39,7 @@ const Signup = () => {
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       return;
     }
@@ -51,7 +51,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "https://intouchbackendkv.onrender.com/api/user/",
+        "https://intouchbackendkv.onrender.com/api/user",
         {
           name,
           email,
@@ -70,6 +70,7 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
+      history.push("/chats")
      
     } catch (error) {
       toast({
