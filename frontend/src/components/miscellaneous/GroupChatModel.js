@@ -119,7 +119,38 @@ const GroupChatModel =({
           });
           return;
         }
-      }
+      
+
+ if (selectedChat.groupAdmin._id !== user._id) {
+      toast({
+        title: "Only admins can add someone!",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+      const { data } = await axios.put(
+        `/api/chat/groupadd`,
+        {
+          chatId: selectedChat._id,
+          userId: user1._id,
+        },
+        config
+      );
+
+
+
+
         //to remove a user 
         const handleRemove = async (user1) => {
           if (selectedChat.groupAdmin._id !== user._id && user1._id !== user._id) {
