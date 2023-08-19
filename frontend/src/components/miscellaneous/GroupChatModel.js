@@ -24,13 +24,16 @@ import UserListItem from "../userAvatar/UserListItem";
 
 const GroupChatModel =({
   fetchMessages, fetchAgain, setFetchAgain
-})
+})=>{
+   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [groupChatName, setGroupChatName] = useState();
+  const [search, setSearch] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [renameloading, setRenameLoading] = useState(false);
+  const toast = useToast();
 
-
-//to delete any user 
-const handleDelete = (delUser) => {
-    setSelectedUsers(selectedUsers.filter((sel) => sel._id !== delUser._id));
-  };
+   const { selectedChat, setSelectedChat, user } = ChatState();
 
 
   //to search user 
@@ -75,7 +78,34 @@ const handleDelete = (delUser) => {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
-      }}}
+      };
+       const { data } = await axios.put(
+        `/api/chat/rename`,
+        {
+          chatId: selectedChat._id,
+          chatName: groupChatName,
+        },
+        config
+      );
+
+        console.log(data._id);
+      // setSelectedChat("");
+      setSelectedChat(data);
+      setFetchAgain(!fetchAgain);
+      setRenameLoading(false);
+    } catch (error) {
+      toast({
+        title: "Error Occured!",
+        description: error.response.data.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setRenameLoading(false);
+    }
+    setGroupChatName("");
+  };
     
       //to handle user in 
       const handleAddUser = async (user1) => {
@@ -186,6 +216,6 @@ const handleDelete = (delUser) => {
       </Modal>
     </>
   );
+              }}
 
-
-export default UpdateGroupChatModal;
+export default GroupChatModel;
