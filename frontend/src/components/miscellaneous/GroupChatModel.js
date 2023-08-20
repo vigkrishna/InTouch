@@ -292,6 +292,6 @@ const GroupChatModel =({
       </Modal>
     </>
   );
-              }}
+};
 
 export default GroupChatModel;

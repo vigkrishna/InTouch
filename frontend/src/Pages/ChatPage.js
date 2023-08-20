@@ -7,10 +7,12 @@ import { ChatState } from "../Context/ChatProvider";
 import React from 'react';
 
 
- const Chatpage = () => {
+
+ const ChatPage = () => {
   const [fetchAgain, setFetchAgain] = useState(false);
   const { user } = ChatState();
 
+  
   return (
 
 
@@ -30,4 +32,4 @@ import React from 'react';
   );
 };
 
-export default Chatpage;
+export default ChatPage;
