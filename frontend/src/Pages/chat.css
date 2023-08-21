@@ -1,0 +1,11 @@
+.conT{
+ display: flex;
+ flex-direction: column;
+ gap: 10vh;
+}
+
+.mainHead{
+    font-size:3.5rem;
+    text-align: center;
+    color: white;
+}

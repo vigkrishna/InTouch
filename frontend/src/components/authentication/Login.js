@@ -56,7 +56,7 @@ import { useHistory } from "react-router-dom";
      
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history.push("/");
+      history.push("/chats");
     } catch (error) {
       toast({
         title: "Error Occured!",
