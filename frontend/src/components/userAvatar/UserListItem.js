@@ -31,6 +31,16 @@ const UserListItem = ({ handleFunction }) => {
         src={user.pic}
       />
       <Box>
+<Text>
+{user.details}
+</Text>
+<Text fontSize="-moz-initial">
+ 
+</Text>
+
+      </Box>
+      
+      <Box>
         <Text>{user.name}</Text>
         <Text fontSize="xs">
           <b>Email : </b>
